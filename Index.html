@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptselfpractisestuff-2</title>
+    <link rel="stylesheet" href="Style.css">
+    <script type="text/javascript" src="Script.js"></script>
+</head>
+<body>
+    
+    <h1>javaScript ES6</h1>
+    <p>The javaScript ES6 (also called ECMAScript 2015) defines a new set of rules governing the syntax of JS code </p>
+    <p>1=> Let and Const keywords > Used to create block level variables 2=> Arrow functions > It reduces the length of the code for creating a function 3=>Classes > These are the templetes to create objects 4=>Default parameter values > It allows to pass the argument through a function by default 5=> find() and findIndex method > It helps to find the element or index of an array 6=> Exponentiation (**) > It raises the first operand to the power of the second operand</p>
+
+
+    <h1>Templete String</h1>
+    <p>new kind of string literally introduced in ES6. Strings are enclosed in backtick(``)instead of single or double quotes(",') eg `string ${expression} string text`</p>
+
+
+    <h1>Functions in JS</h1>
+    <p>1=> Regular Functions 2=> Arrow Functions 3=> Function Expression 4=> IFFE Functions 5=> Generator Funcitons</p>
+
+    <h1>Regular Function</h1>
+    <p>function myFunction(){
+         var str = "Visit Edureka for bestonline courses";
+         var pattern = /edureka/i;
+         var result = str.match(pattern);
+         document.write(result); 
+    }
+    myFunction();
+    <p>JS makes use of following to identify pattern within strings:- Modifiers, Brackets, MetaCharaters, Quantifiers, RegExp Object methods, RegExp Object properties </p>    </p>
+
+    <h1>Arrow Function</h1>
+    <p>It reduce the length of syntax. There is no binding of 'this' keyword in these functions. In arrow function , "this" keywords always represents the object that defined the arrow function. If there is only one line of code, you can ignore brackets and return keyword of the function  </p>
+    <p>
+        myFunc = () => {
+            var a =10; 
+            var b =20;
+            return ( a + b );
+        }
+        console.log(myFunc())
+    </p>
+
+    <h1>Function Expression</h1>
+    <p>Function Expression are used to define a function inside an expression. The name of the function is ommitted. These function are always invoked with the help of variable name. Funciton expression must be declared before using them becz they aren't hoisted</p>
+    <p>
+        myFunc = function () {
+            var a =10; 
+            var b =20;
+            return ( a + b );
+        }
+        console.log(myFunc())
+    </p>
+
+    <h1>IFFE Function</h1>
+    <p>IFFE Funciton stands for Immediately Invoked Fnction Expression. These function used to create a function that can execute automatically after the function definition. It only runs once when the interpreter runs into it. IFFE function can be assigned to a varible to store its return value, not the function definition </p>
+    <p>
+        const display = (
+            function () {
+            var a ="Welcome to edureka"; 
+            return a;
+        }
+        )();
+        console.log(display)
+    </p>
+
+
+    <h1>Generator Function</h1>
+    <p>Generator functions return generator object when called. these function are declared with "function" keyword by asterisk(*). These function doen't execute their body when called , insted the return an iternery object. Therefore iterator's next() method is used to execute the generators body. The next() method returns an object with two properties : value and done which indicates the yeilded value and whether the generator has yield its last value or not </p>
+    <p>
+        function* myGenerator() {
+
+            var i = 0;
+            for(i=0; i (lessthen) 10; i++){
+                yield i;
+            }
+        }        
+        const gen = myGenerator();
+
+        for(i=0; i (lessthen) 10; i++){
+            console.log(gen.next().value);
+        }
+        O/p:- 0123456789
+    </p>
+
+
+
+
+
+
+
+
+</body>
+</html>
