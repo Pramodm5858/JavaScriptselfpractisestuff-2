@@ -9,6 +9,7 @@
 </head>
 <body>
     
+    <h1>Class 5 - javaScript</h1>
     <h1>javaScript ES6</h1>
     <p>The javaScript ES6 (also called ECMAScript 2015) defines a new set of rules governing the syntax of JS code </p>
     <p>1=> Let and Const keywords > Used to create block level variables 2=> Arrow functions > It reduces the length of the code for creating a function 3=>Classes > These are the templetes to create objects 4=>Default parameter values > It allows to pass the argument through a function by default 5=> find() and findIndex method > It helps to find the element or index of an array 6=> Exponentiation (**) > It raises the first operand to the power of the second operand</p>
@@ -16,7 +17,6 @@
 
     <h1>Templete String</h1>
     <p>new kind of string literally introduced in ES6. Strings are enclosed in backtick(``)instead of single or double quotes(",') eg `string ${expression} string text`</p>
-
 
     <h1>Functions in JS</h1>
     <p>1=> Regular Functions 2=> Arrow Functions 3=> Function Expression 4=> IFFE Functions 5=> Generator Funcitons</p>
@@ -83,6 +83,184 @@
         }
         O/p:- 0123456789
     </p>
+
+    <h1>Let keyword</h1>
+    <p>ES6 provides a new way of declaring a variable by using the let keyword. Let keyword creates read & write reference to a value. It works similar to the var keyword. But the let keyword creates variables whose values can't be accessed outside the block.</p>
+
+    <h1>Const keyword</h1>
+    <p>ES6 provides a new way of declaring a constant by using the const keyword. Let keyword creates only read-only reference to a value. It works similar to the let keyword. But the const keyword creates block-scoped variables whose values can't be re-assigned.</p>
+
+    <h1>Classes in JS </h1>
+    <p>In Object oriented programming, a class is a blueprint for creating objects.</p>
+
+    <p>
+        class type_desserts {  <!-- Class Name -->
+            constructor (type, prep){    <!-- Constructor method -->  <!-- parameters -->
+                this.food_type=type;
+                this.preparation=prep;
+            }
+        }        
+        cupcake_bliss = new type_desserts("cakes", "bakes");                <!-- 'objects' of different restaurants -->
+        Natural_ice_cream = new type_desserts("ice-cream", "freezed")       <!-- 'objects' of different restaurants -->
+    </p>
+
+    <h1>JS Object</h1>
+    <p>An object is an instance of a class. It has states and behaviors. For Example: A dog has States - color, name and breed and Behaviors - wagging the tail, barking, eating.</p>
+
+    <p ><!-- Syntax -->
+        var person = new Objects();
+        person.firstName = "John";
+        person.lastName = "Doe";
+        person.age = 50;
+        person.eyeColor = "blue";
+    </p>
+
+    <h1>Constructor Method</h1>
+    <p>The constructor method is a special method used to initialize properties. It is called automatically when an object of the class is instantiated, and it has to have exact name "constructor". If you do not have a constructor method, JS will add an invisible and empty constructor method. </p>
+    
+    <p ><!-- Syntax -->
+        class class_name{
+            constructor(brand){
+                this.carname= brand;
+            }
+        }
+    </p>
+
+    <h1>This keyword</h1>
+    <p>In JS, this keyword refers to the object it belongs to </p>
+    <p>*=>It can have differet values depending on where it is used *=>if used in method, it refers to owner object *=> if used in Funciton, it refers to global object *=> if used in events, it refers to the element that received the event *=> if used alone, it will represent the global object *=> call() and apply() methods are predefined methods of JS *=>These methods can be used to call an object method with another object as argument</p>
+
+    <h1>Import/Export Statements</h1>
+    <p>In JS import Statements is used to import bindings that can be exported by another module or vice versa. It mmakes your code easily manageable. It makes debugging and understanding of your code simpler. You can export the code after writing it in one file so that it can be used by another file. </p>
+
+    <h1>Introduction of Cookies</h1>
+    <p>Cookies are small chunk of data. They can be used for authenticating, session tracking, remember specific information about the user like his name, password, last visited date etc </p>
+
+    <p ><!-- Syntax -->
+        funciton Write_Cookies(){
+            cookievalue = "customer_name"
+            document.cookie = "name=" + cookievalue;
+            document.write ("Setting Cookies : " + "name=" + cookievalue);
+        }
+    </p>
+
+    <p>Advatages of Cookies :- *=>Cookies are stored on the user's computer, so no extra burden on the server. *=>You can configure the cookies to expire when the brower session ends(session cookies), or they can exist for a specified length of time on the client's computer(persistent cookies). *=>The cookies are stored on clients hard disk, so if the server crashes, the cookies are still available.</p>
+
+    <h1>Local Storage and Session Storage</h1>
+    <p>methods -> setItem (key, value) = store key/value pair *=> getItem(key) *=> removeItem(key) *=> clear () *=> key (index) *=> length </p>
+
+    <p>Local Storage vs Session Storage vs Cookies</p>
+    <p>Max 5 MB to 10 MB storage  ||  Max 5MB storage || Max 4KB storage</p>
+    <p>Only client side reading is supported || Only client side reading is supported || Supports both client side and server side reading</p>
+    <p>The data stored is permanent, does not expire and remains stored on the user's computer untill a user/webapp asks the browser to delete it || Has a lifetime as the browser tab in which the data got stored.When the tab is closed, any data stored is deleted || We can set the expiration time for cookie by setting the 'expires' attribute to a date and time </p>
+    <p>Stores data as JSON || Stores data as JSON || Stores data as String values </p>
+
+    <h1>JS Ternery Operator</h1>
+    <p>The ternery operator is  a conditional operator that is used as a shortcut for the if-statement. It takes 3 operands, a condition, a Statement to execute of the condition is met and a statement to execute of the condition is false. </p>
+
+    <p >
+        funciton getFee(isMenber){
+            return (isMenber ? '$2.00' : '$10.00');
+        }
+
+        document.write(getFee(true)+ "<br>");   <!-- expected  O/p: "$2.00"  -->
+
+        document.write(getFee(false)+ "<br>");   <!-- expected  O/p: "$10.00"  -->
+
+        document.write(getFee(null)+ "<br>");   <!-- expected  O/p: "$10.00"  -->
+    </p>
+
+
+    <h1>Class 6 - javaScript </h1>
+    <p>Topics -> *>JS Dictionary Object *> Callback Funcitons *>Promises *>Hoisting *>Event Handling *>Exception Handling *>Async/Await  in JS </p>
+
+    <h1>JS Dictionary Object</h1>
+    <p>Dictionary is a collection o key/value pairs. In JS, there is nothing as "Dictionary" type. However, we can store key value pairs as an object </p>
+
+    <p>
+        var dict = new Object();
+        var dict = {}   <!--or the shorthand way  -->
+        
+        var dict = {FirstName: "Chris", one: "1", 1: "some value"}     
+    </p>
+
+    <p>
+        var dict = {};
+
+        dict["one"] = 1;   <!--using the Indexer  -->
+        dict[1] = "one"; 
+
+        dict["Age"]= 46;   <!--Add new or update property  -->
+
+        dict.FirstName= "Chris";   <!--Direct property by name  -->
+
+        document.write(dict.Age);
+    </p>
+
+    <h1>CallBack Funcitons</h1>
+    <p>It is function that is passed as an argument to another function, which is later called in outer funciton  </p>
+    <p>These functions are primarily used in JS to create asynchronous code</p>
+    <p>JS executes the code in sequential top-down order, but in some cases, we need the code to run in a specific order. Callback functions are used to implement this, and it is known as asynchronous programming      </p>
+    <p>The funciton that accepts other functions as arguments is known as a higher-order function, and it contains the logic for when the callback function get executed  </p>
+
+    <h1>Promises</h1>
+    <p>Promises help to handle asynchronous operations in JS. They are easy to manage when Handling multiple asynchronous operations where callbacks can create callback hell resulting in unmanagable code. A promise is an object which can be returned synchronously from an asynchronous function</p>
+
+    <p>
+        var promise = new Promise(function (resolve, reject){
+        <!--do a thing possibly async, then...  -->
+         if(<!--everything turned out fine -->){ 
+                resolve("Stuff worked!");
+            }
+            else{
+                reject(Error("It broke"));
+            }
+        });
+    </p>
+
+    <p>It have 3 possible states:- 1=> Fulfilled  2=>Rejected 3=>Pending</p>
+
+    <h1>Hoisting</h1>
+    <p>Hoisting is machanism of JS. It allows variables & functions to used before they are even declare. The declaration of variables and functions are moved to the top of the scope, before the execution. whether the scope or the declarations are global or local, they will always be moved to the top of their scope. initializations will not be hoisted on top    </p>
+
+    <h1>Event Handling</h1>
+    <p>When a user visits your website, they perform some activities such as clicking text, images, links, hover over elements etc. These are the e.g. of what JS calls events.</p>
+    <p>Attribute :=> onload, onunload, onsubmit, onkeydown, onkeypress, onkeyup, onclick, ondblclick </p>
+
+    <p>
+    <!--head  -->
+        <!--script  -->
+        function over_div(){
+            document.write("Mouse over the division ")
+        }
+        function out_div(){
+            document.write("Mouse out of the division ")
+        }
+    <!--head  -->
+    <p>Bring your mouse inside the division to see the result: </p>
+        < div onmousemove="over_div()" onmouseout="out_div()" > 
+            <h2>This is the division region</h2>
+        < / div >
+    </p>
+
+
+    <h1>Scheduling a Call</h1>
+    <p>When you don't want a function to execute Immediately on function call, but after predefined time interval on function call, it is called "Scheduling a call."   </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
