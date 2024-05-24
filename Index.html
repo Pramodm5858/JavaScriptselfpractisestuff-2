@@ -245,14 +245,136 @@
 
 
     <h1>Scheduling a Call</h1>
-    <p>When you don't want a function to execute Immediately on function call, but after predefined time interval on function call, it is called "Scheduling a call."   </p>
+    <p>When you don't want a function to execute Immediately on function call, but after predefined time interval on function call, it is called "Scheduling a call."</p>
+    <p>There are 2 methods/ways to schdule a call 1=> setTimeOut(): Allows us to run a function once after the interval of time specified 2=> setInterval(): Allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval. </p>
+
+    <h1>setTimeOut</h1>
+    <p> <!--Syntax   -->
+        var timer = setTimeout(func|code, [delay], [arg1], [arg2], ... );
+
+        func|code : Function/string of code to execute (usually a function)
+
+        delay: The delay before the run (in milliseconds) (1000 ms = 1second), by default 0.
+
+        arg1, arg2... : Arguments for the function 
+        
+        function greeting (phrase, name){
+            alert (phrase + ' , ' + name)
+        }
+        setTimeOut (greeting, 5000, "Hello", 'John')
+    </p>
+
+    <h1>setInterval</h1>
+    <p> <!--Syntax   -->
+        var timerId = setInterval(func|code, [delay], [arg1], [arg2], ... );
+
+        func|code : Function/string of code to execute (usually a function)
+
+        delay: The fixed interval between each successive run, in milliseconds (1000 ms = 1second), by default 0.
+
+        arg1, arg2... : Arguments for the function 
+        
+        function greeting (phrase, name){
+            alert (phrase + ',' + name)
+        }
+        setInterval (greeting, 5000, "Hello", 'John')
+    </p>
+
+    <h1>Exception Handling</h1>
+    <p>JS programs may encounter errors/exceptions becz of mistakes , an unexpected user input, an erroneous server response, and for thousand other reasons. usually, a script "dies" (Immediately stops) in case of an error, printing it to console. To combat this, and prevent the error from stopping the entire flow of the script, JS provides a mechanism for error/exception Handling</p>
+    <p>Type of error => 1)syntax 2)Logical 3)Runtime</p>
+
+    <h1>Syntax Errors</h1>
+    <p>Syntax error are generally caused by misspellings or bad punctuation. They are also called parsing errors, and occur at interpreting time in JS. Only the code contained within the same thread as the error is affected, and the rest of the code in other threads get executed (assuming nothing in them depends on the code containing the error).</p>
+
+    <p><!-- example -->
+        <!--script  -->
+            document,write("This is an example to syntax error");
+        <!--script  -->
+    </p>
+
+    <h1>RunTime Errors</h1>
+    <p>RunTime errors are those that occur during execution (i.e., after completion/ interpretion). They are also called exceptions. Exceptions also affect only the thread in which they occur, allowing other JS threads to continue normal execution.</p>
+
+    <p><!-- example -->
+        <!--script  -->
+            document.printme();<!--function printme() does not exist,,throwing error at runtime  -->
+        <!--script  -->
+    </p>
+
+    <h1>Logical Errors</h1>
+    <p>Logical error occur when you make a mistake in the logic that drives your script, and you do not get the result you expected. You cannot catch those errors, becz it depends on your business requirement what type of logic you want to put in your program.</p>
+
+    <p><!-- example -->
+        <!--script  -->
+        var a =5;
+        var b= 4;
+        document.write("The product is " (a-b));<!--the O/p is expected is 20, but it returns 1, due to writing --><!--// (minus) - sign instead of * -->
+        <!--script  -->
+    </p>
 
 
+    <h1>Try, catch, and finally Statements</h1>
+    <p>The latest versions of JS added exception Handling capabilities. JS implements the try, catch, finally construct to handle exceptions.  </p>
+    <p>try block:- The section of the code where an error is expected is placed within this block</p>
+    <p>catch block:- The catch block follows the try block. It contains the set of operations to be performed if an error is thrown from the try block. You can catch programmer-generated and run-time exceptions, but you cannot catch syntax errors. </p>
+    <p>finally block:- This is the block that will always execute unconditionally after the try/catch. It is optional to include this block.</p>
 
+    <p>The try block must be followed by either exactly one catch block or one finally block (or one of both)</p>   
+    <p>When an exception occurs in the try block, the exception is placed in e and the catch block is executed.</p>
 
+    <p>
+        <!--script  -->
+        try{
+            <!--code to run  -->
+        }
+        catch(e){
+            <!--code to run if an exception occurs -->
+        }
+        finally{
+            <!--code to run irrespective of whether an exception occurs -->
+        }
+    </p>
 
+    <h1>Async/ Await in JS </h1>
+    <p>"Async/await" is a special syntax to work with promises in a more comfortable fashion. It is easy to understand and use.   </p>
 
+    <p>
+        1) Async Functions: The async keyword can be placed before a function, like this:  
+        <p>
+            <!--script  -->
+           async function f(){
+            return 1;
+           }
+            <!--script  -->
+        </p>
+    </p>
 
+    <p>
+        <!--script  -->
+       async function f(){           <!--The word "async" before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically. For instance, this function returns a resolved promise with the result '1'.     -->
+        return 1;
+       }
+
+       f().then(alert)
+        <!--script  -->
+    </p>
+
+    <p>
+        <!--script  -->
+       async function f(){           <!--  So sync ensures that the function returns a promise, and wrops non-promises in it. There's is another keyword, await, that works only inside async functions.        -->
+        let promise = new Promise((resolve, reject)    <!--The keyword await makes JS wait until that promise settles and returns its result. Here's is an example with promise that resolves in 1 second.    -->
+        => {                                            <!--The function execution "pauses" at the line (*) and resumes when the promise settles, with result becoming its result. So the code above(this) shows "done!" in one second.   -->
+            setTimeOut(()=> resolve("done!"),1000 )
+        })
+
+        let result = await promise; <!--wait until the promise resolves     -->
+        alert(result); 
+       }
+
+       f();
+        <!--script  -->
+    </p>
 
 
 
